@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    environment:
+      # Optional - leave blank to use the built-in rule-based AI assistant
+      # and format-only Cardano check. See README.md.
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - BLOCKFROST_API_KEY=${BLOCKFROST_API_KEY:-}
